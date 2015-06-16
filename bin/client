@@ -16,6 +16,10 @@ var argv = require('optimist')
     .options('version', {
         describe: 'print version and exit'
     })
+    .options('relative', {
+        default: false,
+        describe: 'request a relative path URL to host, rather than a subdomain'
+    })
     .describe('port', 'internal http server port')
     .argv;
 
@@ -35,6 +39,7 @@ var opt = {
     port: argv.port,
     local_host: argv['local-host'],
     subdomain: argv.subdomain,
+    relative: argv.relative
 };
 
 lt_client(opt.port, opt, function(err, tunnel) {
