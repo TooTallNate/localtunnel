@@ -1,6 +1,3 @@
-var EventEmitter = require('events').EventEmitter;
-var debug = require('debug')('localtunnel:client');
-
 var Tunnel = require('./lib/Tunnel');
 
 module.exports = function localtunnel(port, opt, fn) {
